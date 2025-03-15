@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Knowledge Assistant | Result </title>
+    <!-- <style>
+        #numberInput {
+            display: none; /* Hide input field by default */
+            margin-top: 10px;
+        }
+    </style> -->
+</head>
+<body>
+    <h1>Enter Details</h1>
+    <form action="/assistant" method="POST">
+        <label for="user_text">Enter Your Text: </label>
+        <textarea name="user_text" rows="4", cols="50" required></textarea>
+        <br>
+        <br>
+        <label for="tasks">Choose a Task:</label>
+        <select name="tasks" id="tasks" onchange="toggleInput()" required>
+            <option value="none">--Select--</option>
+            <option value="summarization">Summarize Text</option>
+            <option value="keywords">Get Keywords</option>
+            <option value="Q&A">Ask Questions</option>
+        </select>
+        <br>
+        <br>
+        <!-- <div id="numberInput"> -->
+        <label for="user_number">Enter minimun length: </label>
+        <input type="number" id="number" name="user_number">
+        <!-- </div> -->
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <!-- <script>
+        function toggleInput() {
+            let dropdown = document.getElementById("tasks");
+            let numberInput = document.getElementById("user_number");
+
+            if (dropdown.value === "summarization" || dropdown.value == "keywords") {
+                numberInput.style.display = "block";  // Show input
+            } else {
+                numberInput.style.display = "none";   // Hide input
+            }
+        }
+    </script> -->
+</body>
+</html>
