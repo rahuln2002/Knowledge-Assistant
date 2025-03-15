@@ -1,0 +1,31 @@
+import os
+from datetime import datetime
+from knowledgeassistant.constant import pipeline
+
+class PipelineConfig:
+    def __init__(self, timestamp = datetime.now()):
+        timestamp = timestamp.strftime("%d_%m_%Y_%H_%M_%S")
+        self.pipeline_name = pipeline.PIPELINE_NAME
+        self.artifact_name = pipeline.ARTIFACT_DIR
+        self.artifact_dir = os.path.join(
+            self.artifact_name,
+            timestamp
+        )
+        self.timestamp: str = timestamp
+
+class DataSummarizationConfig:
+    def __init__(self, pipeline_config: PipelineConfig):
+        self.data_summarization_dir: str = os.path.join(
+            pipeline_config.artifact_dir,
+            pipeline.DATA_SUMMARIZATION_DIR_NAME
+        )
+        self.input_text_file_path: str = os.path.join(
+            self.data_summarization_dir,
+            pipeline.DATA_SUMMARIZATION_INPUT_TEXT_DIR,
+            pipeline.INPUT_TEXT_FILE_NAME
+        )
+        self.summarized_text_file_path: str = os.path.join(
+            self.data_summarization_dir,
+            pipeline.DATA_SUMMARIZATION_SUMMARIZED_TEXT_DIR,
+            pipeline.SUMMARIZED_TEXT_FILE_NAME
+        )
