@@ -13,7 +13,6 @@ def write_txt_file(file_path: str, content: str, replace: bool = False):
         os.makedirs(dir_path, exist_ok = True)
         with open(file_path, 'w', encoding='utf-8') as txt_file:
             txt_file.write(content)
-        logging.info("Successfully wrote content to text file")
     except Exception as e:
         raise KnowledgeAssistantException(e, sys)
 
