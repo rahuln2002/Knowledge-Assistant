@@ -3,49 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Knowledge Assistant | Result </title>
-    <!-- <style>
-        #numberInput {
-            display: none; /* Hide input field by default */
-            margin-top: 10px;
+    <title>Knowledge Assistant</title>
+    <script>
+        function toggleElements() {
+            let taskDropdown = document.querySelector("select[name='tasks']");
+            let numberInput = document.querySelector("input[name='user_number']");
+            let numberLabel = document.getElementById("number_label");
+            let submitButton = document.getElementById("submit_btn");
+
+            if (taskDropdown.value === "summarization") {
+                numberInput.style.display = "inline";
+                numberLabel.style.display = "inline";
+                numberInput.disabled = false;
+                numberLabel.textContent = "Enter minimum length: ";
+                submitButton.disabled = false;
+            } else if (taskDropdown.value === "keywords") {
+                numberInput.style.display = "inline";
+                numberLabel.style.display = "inline";
+                numberInput.disabled = false;
+                numberLabel.textContent = "Count : ";
+                submitButton.disabled = false;
+            } else if (taskDropdown.value === "Q&A") {
+                numberInput.style.display = "none";
+                numberLabel.style.display = "none";
+                submitButton.disabled = false;
+            } else {
+                numberInput.style.display = "none";
+                numberLabel.style.display = "none";
+                submitButton.disabled = true;
+            }
         }
-    </style> -->
+    </script>
 </head>
 <body>
     <h1>Enter Details</h1>
     <form action="/assistant" method="POST">
         <label for="user_text">Enter Your Text: </label>
-        <textarea name="user_text" rows="4", cols="50" required></textarea>
-        <br>
-        <br>
+        <textarea name="user_text" rows="4" cols="50" required></textarea>
+        <br><br>
+
         <label for="tasks">Choose a Task:</label>
-        <select name="tasks" id="tasks" onchange="toggleInput()" required>
+        <select name="tasks" required onchange="toggleElements()">
             <option value="none">--Select--</option>
             <option value="summarization">Summarize Text</option>
             <option value="keywords">Get Keywords</option>
             <option value="Q&A">Ask Questions</option>
         </select>
-        <br>
-        <br>
-        <!-- <div id="numberInput"> -->
-        <label for="user_number">Enter minimun length: </label>
-        <input type="number" id="number" name="user_number">
-        <!-- </div> -->
-        <br>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-    <!-- <script>
-        function toggleInput() {
-            let dropdown = document.getElementById("tasks");
-            let numberInput = document.getElementById("user_number");
+        <br><br>
 
-            if (dropdown.value === "summarization" || dropdown.value == "keywords") {
-                numberInput.style.display = "block";  // Show input
-            } else {
-                numberInput.style.display = "none";   // Hide input
-            }
-        }
-    </script> -->
+        <label id="number_label" for="user_number" style="display: none;"></label>
+        <input type="number" id="number" name="user_number" style="display: none;" required>
+        <br><br>
+
+        <button type="submit" id="submit_btn" disabled>Submit</button>
+    </form>
 </body>
 </html>
