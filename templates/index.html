@@ -4,58 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knowledge Assistant</title>
-    <script>
-        function toggleElements() {
-            let taskDropdown = document.querySelector("select[name='tasks']");
-            let numberInput = document.querySelector("input[name='user_number']");
-            let numberLabel = document.getElementById("number_label");
-            let submitButton = document.getElementById("submit_btn");
-
-            if (taskDropdown.value === "summarization") {
-                numberInput.style.display = "inline";
-                numberLabel.style.display = "inline";
-                numberInput.disabled = false;
-                numberLabel.textContent = "Enter minimum length: ";
-                submitButton.disabled = false;
-            } else if (taskDropdown.value === "keywords") {
-                numberInput.style.display = "inline";
-                numberLabel.style.display = "inline";
-                numberInput.disabled = false;
-                numberLabel.textContent = "Count : ";
-                submitButton.disabled = false;
-            } else if (taskDropdown.value === "Q&A") {
-                numberInput.style.display = "none";
-                numberLabel.style.display = "none";
-                submitButton.disabled = false;
-            } else {
-                numberInput.style.display = "none";
-                numberLabel.style.display = "none";
-                submitButton.disabled = true;
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="static/script.js" defer></script>
 </head>
 <body>
-    <h1>Enter Details</h1>
-    <form action="/assistant" method="POST">
-        <label for="user_text">Enter Your Text: </label>
-        <textarea name="user_text" rows="4" cols="50" required></textarea>
-        <br><br>
+    <div class="container">
+        <h1>Enter Details</h1>
+        <form action="/assistant" method="POST">
+            <label for="user_text">Enter Your Text: </label>
+            <textarea name="user_text" rows="4" cols="50" required></textarea>
+            <br><br>
 
-        <label for="tasks">Choose a Task:</label>
-        <select name="tasks" required onchange="toggleElements()">
-            <option value="none">--Select--</option>
-            <option value="summarization">Summarize Text</option>
-            <option value="keywords">Get Keywords</option>
-            <option value="Q&A">Ask Questions</option>
-        </select>
-        <br><br>
+            <label for="tasks">Choose a Task:</label>
+            <select name="tasks" required onchange="toggleElements()">
+                <option value="none">--Select--</option>
+                <option value="summarization">Summarize Text</option>
+                <option value="keywords">Get Keywords</option>
+                <option value="Q&A">Ask Questions</option>
+            </select>
+            <br><br>
 
-        <label id="number_label" for="user_number" style="display: none;"></label>
-        <input type="number" id="number" name="user_number" style="display: none;" required>
-        <br><br>
+            <label id="number_label" for="user_number" style="display: none;"></label>
+            <input type="number" id="number" name="user_number" style="display: none;" required>
+            <br><br>
 
-        <button type="submit" id="submit_btn" disabled>Submit</button>
-    </form>
+            <button type="submit" id="submit_btn" disabled>Submit</button>
+        </form>
+    </div>
 </body>
 </html>
