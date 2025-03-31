@@ -72,16 +72,21 @@ class RAG:
     def initiate_rag(self, input_text_path: str, query: str):
         try:
             docs = self.split_text(input_text_path = input_text_path)
+            logging.info("Splitted Text into Chunks Successfully")
             store = self.create_and_store_embeddings(documents = docs)
+            logging.info("Successfully stored vector embeddings")
             llm = self.TogetherLLM()
+            logging.info("Successfully loaded the llm")
             result = self.retrieval(
                 llm = llm,
                 db = store,
                 query = query
             )
+            logging.info("Successfully Generated Results")
             write_txt_file(
                 file_path = self.rag_config.rag_generated_text_path,
                 content = result['result']
             )
+            logging.info("Successfully wrote results in txt file")
         except Exception as e:
             raise KnowledgeAssistantException(e, sys)
