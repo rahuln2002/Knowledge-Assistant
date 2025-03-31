@@ -13,3 +13,7 @@ SUMMARIZED_TEXT_FILE_NAME: str = "summarized_text.txt"
 KEYWORD_EXTRACTION_DIR_NAME: str = "keyword_extraction"
 EXTRACTED_KEYWORDS_DIR: str = "keywords"
 EXTRACTED_KEYWORDS_FILE_NAME: str = "keywords.txt"
+
+RAG_DIR_NAME: str = "RAG"
+RAG_DIR: str = "generation"
+RAG_FILE_NAME: str = "generated_text.txt"
