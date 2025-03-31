@@ -9,3 +9,10 @@ torchvision
 torchaudio
 --extra-index-url https://download.pytorch.org/whl/cu126
 scikit-learn
+langchain
+langchain-community
+langchain-core
+ollama
+chromadb
+faiss-cpu
+together

@@ -44,3 +44,15 @@ class KeywordExtractionConfig:
             pipeline.EXTRACTED_KEYWORDS_DIR,
             pipeline.EXTRACTED_KEYWORDS_FILE_NAME
         )
+
+class RAGConfig:
+    def __init__(self, pipeline_config: PipelineConfig):
+        self.RAG_dir: str = os.path.join(
+            pipeline_config.artifact_dir,
+            pipeline.RAG_DIR_NAME
+        )
+        self.rag_generated_text_path: str = os.path.join(
+            self.RAG_dir,
+            pipeline.RAG_DIR,
+            pipeline.RAG_FILE_NAME
+        )
