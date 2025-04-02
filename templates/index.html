@@ -12,7 +12,7 @@
         <h1>Enter Details</h1>
         <form action="/" method="POST">
             <label for="user_text">Enter Your Text: </label>
-            <textarea name="user_text" maxlength="5000" rows="4" cols="50" oninput="updateCount()" required>{{ user_text if user_text else '' }}</textarea>
+            <textarea id="user_text" name="user_text" maxlength="5000" rows="4" cols="50" oninput="updateCount()" required>{{ user_text if user_text else '' }}</textarea>
             <p id="charCount">5000 characters remaining</p>
             <br><br>
 
