@@ -1,0 +1,66 @@
+[ 2025-04-03 02:39:00,080 ] : 97 : werkzeug : INFO : _internal : [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7860
+ * Running on http://172.25.253.253:7860
+[ 2025-04-03 02:39:00,081 ] : 97 : werkzeug : INFO : _internal : [33mPress CTRL+C to quit[0m
+[ 2025-04-03 02:39:31,300 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:39:31] "GET / HTTP/1.1" 200 -
+[ 2025-04-03 02:39:31,496 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:39:31] "GET /static/style.css HTTP/1.1" 200 -
+[ 2025-04-03 02:39:31,503 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:39:31] "GET /static/script.js HTTP/1.1" 200 -
+[ 2025-04-03 02:40:04,340 ] : 12 : root : INFO : utils : Successfully create the file: /tmp\Artifacts\03_04_2025_02_38_12\input_text\input_text.txt
+[ 2025-04-03 02:40:10,023 ] : 22 : root : INFO : summarization : Summarization Pipeline Successfully Setup
+[ 2025-04-03 02:40:10,025 ] : 23 : root : INFO : utils : Successfully read the file
+[ 2025-04-03 02:40:14,981 ] : 26 : root : INFO : summarization : Text successfully summarized
+[ 2025-04-03 02:40:14,981 ] : 12 : root : INFO : utils : Successfully create the file: /tmp\Artifacts\03_04_2025_02_38_12\data_summarization\summarized_text\summarized_text.txt
+[ 2025-04-03 02:40:14,981 ] : 29 : root : INFO : summarization : Successfully wrote summarized text
+[ 2025-04-03 02:40:15,000 ] : 23 : root : INFO : utils : Successfully read the file
+[ 2025-04-03 02:40:15,001 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:15] "POST / HTTP/1.1" 200 -
+[ 2025-04-03 02:40:15,068 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:15] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[ 2025-04-03 02:40:15,070 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:15] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[ 2025-04-03 02:40:25,482 ] : 10 : root : INFO : utils : Successfully removed the file: /tmp\Artifacts\03_04_2025_02_38_12\input_text\input_text.txt
+[ 2025-04-03 02:40:25,483 ] : 12 : root : INFO : utils : Successfully create the file: /tmp\Artifacts\03_04_2025_02_38_12\input_text\input_text.txt
+[ 2025-04-03 02:40:25,484 ] : 22 : root : INFO : keywordextraction : Vectorizer and Transformer successfully setup
+[ 2025-04-03 02:40:25,486 ] : 23 : root : INFO : utils : Successfully read the file
+[ 2025-04-03 02:40:25,487 ] : 27 : root : INFO : keywordextraction : Successfully calculated word count and their tfidf scores
+[ 2025-04-03 02:40:25,487 ] : 31 : root : INFO : keywordextraction : Successfully extracted keywords and sorted in descending order of their tfidf scores
+[ 2025-04-03 02:40:25,487 ] : 12 : root : INFO : utils : Successfully create the file: /tmp\Artifacts\03_04_2025_02_38_12\keyword_extraction\keywords\keywords.txt
+[ 2025-04-03 02:40:25,487 ] : 40 : root : INFO : keywordextraction : Successfully extracted and wrote top 25 keywords from text
+[ 2025-04-03 02:40:25,487 ] : 23 : root : INFO : utils : Successfully read the file
+[ 2025-04-03 02:40:25,487 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:25] "POST / HTTP/1.1" 200 -
+[ 2025-04-03 02:40:25,545 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:25] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[ 2025-04-03 02:40:25,545 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:25] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[ 2025-04-03 02:40:41,138 ] : 10 : root : INFO : utils : Successfully removed the file: /tmp\Artifacts\03_04_2025_02_38_12\input_text\input_text.txt
+[ 2025-04-03 02:40:41,138 ] : 12 : root : INFO : utils : Successfully create the file: /tmp\Artifacts\03_04_2025_02_38_12\input_text\input_text.txt
+[ 2025-04-03 02:40:41,140 ] : 23 : root : INFO : utils : Successfully read the file
+[ 2025-04-03 02:40:41,140 ] : 75 : root : INFO : RAG : Splitted Text into Chunks Successfully
+[ 2025-04-03 02:40:41,341 ] : 211 : sentence_transformers.SentenceTransformer : INFO : SentenceTransformer : Use pytorch device_name: cuda
+[ 2025-04-03 02:40:41,341 ] : 219 : sentence_transformers.SentenceTransformer : INFO : SentenceTransformer : Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ 2025-04-03 02:40:45,850 ] : 125 : faiss.loader : INFO : loader : Loading faiss with AVX2 support.
+[ 2025-04-03 02:40:46,146 ] : 127 : faiss.loader : INFO : loader : Successfully loaded faiss with AVX2 support.
+[ 2025-04-03 02:40:46,172 ] : 185 : faiss : INFO : __init__ : Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+[ 2025-04-03 02:40:46,173 ] : 77 : root : INFO : RAG : Successfully stored vector embeddings
+[ 2025-04-03 02:40:46,175 ] : 79 : root : INFO : RAG : Successfully loaded the llm
+[ 2025-04-03 02:40:47,262 ] : 85 : root : INFO : RAG : Successfully Generated Results
+[ 2025-04-03 02:40:47,262 ] : 12 : root : INFO : utils : Successfully create the file: /tmp\Artifacts\03_04_2025_02_38_12\RAG\generation\generated_text.txt
+[ 2025-04-03 02:40:47,262 ] : 90 : root : INFO : RAG : Successfully wrote results in txt file
+[ 2025-04-03 02:40:47,280 ] : 23 : root : INFO : utils : Successfully read the file
+[ 2025-04-03 02:40:47,280 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:47] "POST / HTTP/1.1" 200 -
+[ 2025-04-03 02:40:47,343 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[ 2025-04-03 02:40:47,343 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:47] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[ 2025-04-03 02:40:55,240 ] : 10 : root : INFO : utils : Successfully removed the file: /tmp\Artifacts\03_04_2025_02_38_12\input_text\input_text.txt
+[ 2025-04-03 02:40:55,241 ] : 12 : root : INFO : utils : Successfully create the file: /tmp\Artifacts\03_04_2025_02_38_12\input_text\input_text.txt
+[ 2025-04-03 02:40:55,243 ] : 23 : root : INFO : utils : Successfully read the file
+[ 2025-04-03 02:40:55,244 ] : 75 : root : INFO : RAG : Splitted Text into Chunks Successfully
+[ 2025-04-03 02:40:55,244 ] : 211 : sentence_transformers.SentenceTransformer : INFO : SentenceTransformer : Use pytorch device_name: cuda
+[ 2025-04-03 02:40:55,244 ] : 219 : sentence_transformers.SentenceTransformer : INFO : SentenceTransformer : Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ 2025-04-03 02:40:58,413 ] : 77 : root : INFO : RAG : Successfully stored vector embeddings
+[ 2025-04-03 02:40:58,414 ] : 79 : root : INFO : RAG : Successfully loaded the llm
+[ 2025-04-03 02:40:59,019 ] : 85 : root : INFO : RAG : Successfully Generated Results
+[ 2025-04-03 02:40:59,019 ] : 12 : root : INFO : utils : Successfully create the file: /tmp\Artifacts\03_04_2025_02_38_12\RAG\generation\generated_text.txt
+[ 2025-04-03 02:40:59,020 ] : 90 : root : INFO : RAG : Successfully wrote results in txt file
+[ 2025-04-03 02:40:59,022 ] : 23 : root : INFO : utils : Successfully read the file
+[ 2025-04-03 02:40:59,022 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:59] "POST / HTTP/1.1" 200 -
+[ 2025-04-03 02:40:59,085 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[ 2025-04-03 02:40:59,087 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:40:59] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
+[ 2025-04-03 02:41:01,683 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:41:01] "GET / HTTP/1.1" 200 -
+[ 2025-04-03 02:41:01,749 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:41:01] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+[ 2025-04-03 02:41:01,751 ] : 97 : werkzeug : INFO : _internal : 127.0.0.1 - - [03/Apr/2025 02:41:01] "[36mGET /static/script.js HTTP/1.1[0m" 304 -
