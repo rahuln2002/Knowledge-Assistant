@@ -12,6 +12,7 @@ scikit-learn
 langchain
 langchain-community
 langchain-core
+keras<3
 sentence-transformers
 faiss-cpu>=1.7.4
 together
