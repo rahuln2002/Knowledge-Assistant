@@ -5,6 +5,7 @@ from knowledgeassistant.entity.config_entity import DataSummarizationConfig
 from knowledgeassistant.utils.main_utils.utils import write_txt_file, read_txt_file
 
 import sys
+import torch
 from transformers import pipeline
 
 class DataSummarization:
@@ -16,7 +17,8 @@ class DataSummarization:
 
     def summarize(self, input_text_path: str, min_length: int):
         try:
-            pipe = pipeline("summarization", model="facebook/bart-large-cnn")
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            pipe = pipeline("summarization", model="facebook/bart-large-cnn", device=0 if device == "cuda" else -1)
             logging.info("Summarization Pipeline Successfully Setup")
 
             text = read_txt_file(input_text_path)
