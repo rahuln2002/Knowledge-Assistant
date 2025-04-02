@@ -37,7 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
             submitButton.disabled = true;
         }
     }
-    
+
+    function updateCount() {
+        let textArea = document.getElementById("user_text");
+        let countDisplay = document.getElementById("charCount");
+        let remaining = 5000 - textArea.value.length;
+        countDisplay.textContent = remaining + " characters remaining";
+    }
+
     document.querySelector("select[name='tasks']").addEventListener("change", toggleElements);
+    document.getElementById("user_text").addEventListener("input", updateCount);
+
     toggleElements();
+    updateCount();
 });
