@@ -106,7 +106,7 @@ docker run -p 7860:7860 knowledge-assistant
 ---
 
 ## **👨‍💻 Contributors**
-- **Rahul Nihalani**  
+- **Rahul Nihalani**: [LinkedIn](https://www.linkedin.com/in/rahul-nihalani/)
 
 ---
 
