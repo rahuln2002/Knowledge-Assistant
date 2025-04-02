@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("select[name='tasks']").addEventListener("change", toggleElements);
     document.getElementById("user_text").addEventListener("input", updateCount);
     
-    // Show loading on form submission
     document.getElementById("textForm").addEventListener("submit", function () {
         showLoading();
     });
