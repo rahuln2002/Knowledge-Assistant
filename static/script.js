@@ -40,8 +40,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function showLoading() {
+        document.getElementById("loading").style.display = "block";
+    }
+
+    function hideLoading() {
+        document.getElementById("loading").style.display = "none";
+    }
+
     document.querySelector("select[name='tasks']").addEventListener("change", toggleElements);
     document.getElementById("user_text").addEventListener("input", updateCount);
+    
+    // Show loading on form submission
+    document.getElementById("textForm").addEventListener("submit", function () {
+        showLoading();
+    });
 
     toggleElements();
     updateCount();

@@ -10,14 +10,14 @@
 <body>
     <div class="container">
         <h1>Enter Details</h1>
-        <form action="/" method="POST">
+        <form id="textForm" action="/" method="POST">
             <label for="user_text">Enter Your Text: </label>
-            <textarea id="user_text" name="user_text" maxlength="5000" rows="4" cols="50" oninput="updateCount()" required>{{ user_text if user_text else '' }}</textarea>
+            <textarea id="user_text" name="user_text" maxlength="5000" rows="4" cols="50" required>{{ user_text if user_text else '' }}</textarea>
             <p id="charCount">5000 characters remaining</p>
             <br><br>
 
             <label for="tasks">Choose a Task:</label>
-            <select name="tasks" required onchange="toggleElements()">
+            <select name="tasks" required>
                 <option value="none">--Select--</option>
                 <option value="summarization" {% if task == 'summarization' %}selected{% endif %}>Summarize Text</option>
                 <option value="keywords" {% if task == 'keywords' %}selected{% endif %}>Get Keywords</option>
@@ -32,6 +32,9 @@
             <br><br>
 
             <button type="submit" id="submit_btn" disabled>Submit</button>
+            
+            <!-- Loading Spinner -->
+            <div id="loading" class="loading-spinner" style="display: none;"></div>
         </form>
 
         {% if text %}
