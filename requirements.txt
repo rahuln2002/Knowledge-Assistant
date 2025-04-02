@@ -1,6 +1,6 @@
 ipykernel
 pandas
-numpy
+numpy<2
 flask
 python-dotenv
 transformers
@@ -12,7 +12,6 @@ scikit-learn
 langchain
 langchain-community
 langchain-core
-ollama
-chromadb
-faiss-cpu
+sentence-transformers
+faiss-cpu>=1.7.4
 together

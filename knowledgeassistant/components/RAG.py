@@ -8,7 +8,7 @@ import os
 import sys
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
-from langchain_ollama import OllamaEmbeddings
+from langchain.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from together import Together
 from langchain.chains import RetrievalQA
@@ -38,7 +38,7 @@ class RAG:
     
     def create_and_store_embeddings(self, documents: list):
         try:
-            db = FAISS.from_documents(documents, OllamaEmbeddings(model="nomic-embed-text"))
+            db = FAISS.from_documents(documents, HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2"))
             return db
         except Exception as e:
             raise KnowledgeAssistantException(e, sys)

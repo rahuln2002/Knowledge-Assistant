@@ -1,5 +1,7 @@
+import os
+
 PIPELINE_NAME: str = "KnowledgeAssistant"
-ARTIFACT_DIR: str = "Artifacts"
+ARTIFACT_DIR: str = os.path.join("/tmp", "Artifacts")
 
 
 INPUT_TEXT_DIR: str = "input_text"
